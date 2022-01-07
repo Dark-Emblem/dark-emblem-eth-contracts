@@ -1,0 +1,53 @@
+{
+    "name": "dark-emblem-eth-contracts",
+    "private": true,
+    "version": "0.1.0",
+    "description": "Dark Emblem NFT Contracts",
+    "author": "idmontie@gmail.com",
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "ganache-cli -i 1234 -e 100000000000 -l 6721975000 -p 7545 -g 100000000000",
+        "test:watch": "truffle watch",
+        "test": "truffle test",
+        "test:coverage": "truffle run coverage",
+        "security": "SECURITY=true slither .",
+        "security:compliance:drem": "SECURITY=true slither-check-erc . EmblemDrem",
+        "security:compliance:deck": "SECURITY=true slither-check-erc . EmblemDeck --erc=ERC721",
+        "compile": "truffle compile; npx truffle run contract-size",
+        "migrate": "npm run compile && truffle migrate --reset",
+        "lint": "eslint test migrations",
+        "build": "npm run compile",
+        "verify:ropsten": "truffle run verify EmblemDeck EmblemDrem EmblemAuctions AscendScience --network ropsten"
+    },
+    "dependencies": {
+        "@openzeppelin/contracts": "^4.0.0",
+        "@truffle/hdwallet-provider": "^1.5.1",
+        "@types/bn.js": "^5.1.0",
+        "@types/color-convert": "^2.0.0",
+        "@types/glob": "^7.1.4",
+        "@types/react-gtm-module": "^2.0.1",
+        "bs58": "^4.0.1",
+        "dotenv": "^10.0.0",
+        "eth-gas-reporter": "^0.2.22",
+        "react-ga": "^3.3.0",
+        "react-gtm-module": "^2.0.11",
+        "rimraf": "^3.0.2",
+        "solidity-coverage": "^0.7.17",
+        "truffle": "^5.4.10",
+        "truffle-contract-size": "^2.0.1",
+        "truffle-flattener": "^1.4.2",
+        "truffle-plugin-verify": "^0.5.15",
+        "truffle-watch": "^0.1.4"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.1.0",
+        "chai": "4.2.0",
+        "chai-as-promised": "7.1.1",
+        "chai-bn": "^0.3.0",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-chai-expect": "^2.2.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "prettier": "^2.4.1"
+    }
+}

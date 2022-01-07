@@ -1,0 +1,35 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:chai-expect/recommended",
+        "prettier",
+        "plugin:prettier/recommended"
+    ],
+    "env": {
+        "node": true,
+        "es6": true,
+        "mocha": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "parser": "babel-eslint",
+    "globals": {
+        "artifacts": true,
+        "contract": true,
+        "expect": true
+    },
+    "plugins": [
+        "chai-expect"
+    ],
+    "rules": {
+        "no-unused-expressions": 0,
+        "no-empty": [
+            "error",
+            {
+                "allowEmptyCatch": true
+            }
+        ]
+    }
+}

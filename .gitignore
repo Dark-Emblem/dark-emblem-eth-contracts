@@ -1,0 +1,6 @@
+.env.live
+.env.local
+.env.ropsten
+.mnuemonic
+
+node_modules
